@@ -1,10 +1,11 @@
-<<<<<<< HEAD
-training1
+training1-extras
 =========
 
 - To install this project locally, cd to directory where you want the source code to live, then:
- - > git clone git@github.com:tamsler/training1.git
- - > cd training1
+ - > install neo4j locally
+ - > install mongodb locally
+ - > git clone git@github.com:rbrewer101/training1-extras.git
+ - > cd training1-extras
  - > sudo npm install
   - start application with:
     - > node server.js
@@ -12,7 +13,3 @@ training1
 - To add a dependency during development:
  - > npm install <node dependency> --save
    - NOTE: "--save" adds the dependency to package.json 
-=======
-training1-extras
-================
->>>>>>> 752fc81ae3aa943fd812ed8f3651ede1aeff9c26
