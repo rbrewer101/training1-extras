@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 training1
 =========
 
@@ -11,3 +12,7 @@ training1
 - To add a dependency during development:
  - > npm install <node dependency> --save
    - NOTE: "--save" adds the dependency to package.json 
+=======
+training1-extras
+================
+>>>>>>> 752fc81ae3aa943fd812ed8f3651ede1aeff9c26
