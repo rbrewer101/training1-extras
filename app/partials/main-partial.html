@@ -1,0 +1,15 @@
+
+
+<div ng-repeat="user in users | filter:search | orderBy:user.firstName">
+    <div ng-include="'/partials/user.html'"></div>
+</div>
+
+<br/>
+
+<h4>Create User:</h4>
+<input type="text" placeholder="First Name" ng-model="newUser.firstName">
+<input type="text" placeholder="Last Name" ng-model="newUser.lastName">
+<input type="submit" value="Create User" ng-click="createUser()">
+<br/>
+<br/>
+
