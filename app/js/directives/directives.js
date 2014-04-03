@@ -3,7 +3,7 @@
     'use strict';
 
     /*
-     * Fist directive
+     * First directive
      */
     angular.module('training.directives').directive('trainingHelloWorldDirective', function() {
 

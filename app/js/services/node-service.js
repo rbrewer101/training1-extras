@@ -12,10 +12,12 @@
         var NodeService = {
 
             'nodes' : [],
-            'node' : {}
+            'node' : {name: 'Name01', age:"100"}
         };
 
+
         NodeService.saveLocalNodes = function(nodes) {
+            console.log("nodeservice.savelocalnodes executed with node: ", this.node);
 
             this.nodes = nodes;
         };
@@ -31,6 +33,8 @@
         };
 
         NodeService.init = function() {
+
+            console.log("nodeservice.init was called with node: ", this.node);
 
             NodeService.node = angular.fromJson(localStorage.getItem("node"));
         };

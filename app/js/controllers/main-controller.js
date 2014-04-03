@@ -86,7 +86,7 @@
             'password' : ''
         };
 
-        $scope.create = function() {
+        $scope.createU = function() {
 
             userService.createUser($scope.user, function(err, status) {
 
@@ -105,7 +105,7 @@
     /*
      * User Login Ctrl
      */
-    angular.module('training.controllers').controller('UsersLoginCtrl', ['$scope', '$location', 'training.services.user', function($scope, $location,    userService) {
+    angular.module('training.controllers').controller('UsersLoginCtrl', ['$scope', '$location', 'training.services.user', function($scope, $location, userService) {
 
         $scope.user = {
 
@@ -137,40 +137,12 @@
         };
     }]);
 
-
-    /*
-     * Node Create Ctrl
-     */
-    angular.module('training.controllers').controller('NodesCreateCtrl', ['$scope', 'training.services.node', function($scope, nodeService) {
-
-        $scope.node = {
-
-            'name' : ''
-        };
-
-        $scope.CreateN = function() {
-
-            nodeService.createNode($scope.node, function(err, status) {
-
-                if(err) {
-
-                    console.log("ERROR: create node");
-                }
-                else {
-
-                    console.log("INFO: Created node");
-                }
-            });
-        };
-    }]);
-
     /*
      * Main Controller
      */
-    angular.module('training.controllers').controller('MainCtrl', ['$scope', 'training.services.user', 'training.services.node', function($scope, userService, nodeService) {
+    angular.module('training.controllers').controller('MainCtrl', ['$scope', 'training.services.user', function($scope, userService) {
 
         userService.init();
-        nodeService.init();
 
     }]);
 }());
