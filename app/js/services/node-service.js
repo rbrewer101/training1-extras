@@ -4,15 +4,15 @@
 
     /*
      * API:
-     *
-     * createNode : Object e.g. {"Name":"Ted"}
      */
+
     angular.module('training.services').factory('training.services.node', ['$http', function($http) {
 
         var NodeService = {
 
-            'nodes' : [],
-            'node' : {name: 'Name01', age:"100"}
+            'nodes' : [{name: 'Name01', age: 100},
+                {name: 'Name02', age: 45}],
+            'node' : {name: 'Name01', age: 100}
         };
 
 
@@ -35,8 +35,9 @@
         NodeService.init = function() {
 
             console.log("nodeservice.init was called with node: ", this.node);
+            console.log("and this nodes: ", this.nodes);
 
-            NodeService.node = angular.fromJson(localStorage.getItem("node"));
+            NodeService.node = angular.fromJson(sessionStorage.getItem("node"));
         };
 
         NodeService.getLocalNodes = function() {
@@ -50,35 +51,32 @@
             }
         };
 
-//        // API : createNodes
-//        UserService.getUsers = function(callback) {
-//
-//            if(this.user.authToken) {
-//
-//                $http(
-//                    {
-//                        "method" : "GET",
-//                        "url" : "/api/v1/users",
-//                        "headers" : {
-//                            "Authorization" : "Session " + this.user.authToken
-//                        },
-//                        "cache" : false
-//
-//                    })
-//                    .success(function(data, status, headers, config) {
-//
-//                        callback(null, data);
-//                    })
-//                    .error(function(data, status, headers, config) {
-//
-//                        callback(true, null);
-//                    });
-//            }
-//            else {
-//
-//                console.log("ERROR: User is not authenticated");
-//            }
-//        };
+        // API : getNodes
+        NodeService.getNodes = function(searchName, callback) {
+            console.log("NodeService.getNodes: searchName: ", searchName);
+
+                $http(
+                    {
+                        "method" : "GET",
+                        "url" : "/api/v1/nodes",
+                        "params" : {
+                            "searchTerm" : searchName
+                        }
+                    })
+                    .success(function(data, status, headers, config) {
+
+                        console.log("DEBUG : NodeService.getNodes : status : ", status);
+                        console.log("DEBUG : NodeService.getNodes : data : ", data);
+                        console.log("DEBUG : NodeService.getNodes : headers : ", headers);
+                        console.log("DEBUG : NodeService.getNodes : config : ", config);
+                        callback(null, data);
+                    })
+                    .error(function(data, status, headers, config) {
+                        console.log("DEBUG : NodeService.getNodes : status : ", status)
+
+                        callback(true, null);
+                    });
+        };
 
 
         // API createNode
@@ -99,69 +97,6 @@
                     callback(true, status);
                 });
         };
-
-//        // API loginUser
-//        UserService.loginUser = function(user, callback) {
-//
-//            $http(
-//                {
-//                    "method" : "POST",
-//                    "url" : "/api/v1/users/login",
-//                    "data" : user
-//                })
-//                .success(function(data, status, headers, config) {
-//
-//                    UserService.user = data;
-//                    localStorage.setItem("user", angular.toJson(data));
-//                    callback(false, status);
-//                })
-//                .error(function(data, status, headers, config) {
-//
-//                    callback(true, status);
-//                });
-//        };
-//
-//        // API saveUser
-//        UserService.saveUser = function(user, callback) {
-//
-//            console.log("DEBUG: saveUser called : user : ", user);
-//            $http(
-//                {
-//                    "method" : "PUT",
-//                    "url" : "/api/v1/users",
-//                    "data" : user
-//                })
-//                .success(function(data, status, headers, config) {
-//
-//                    callback(false, status);
-//                })
-//                .error(function(data, status, headers, config) {
-//
-//                    callback(true, status);
-//                });
-//        };
-//
-//        // API Delete User
-//        UserService.deleteUser = function(id, callback) {
-//
-//            $http(
-//                {
-//                    "method" : "DELETE",
-//                    "url" : "/api/v1/users",
-//                    "params" : {
-//                        "objectId" : id
-//                    }
-//                })
-//                .success(function(data, status, headers, config) {
-//
-//                    callback(false, status);
-//                })
-//                .error(function(data, status, headers, config) {
-//
-//                    callback(true, status);
-//                });
-//        };
-
         return NodeService;
     }]);
 

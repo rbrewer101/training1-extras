@@ -25,7 +25,7 @@
                         content: 'Import hiccup with either libre or office 2013',
                         answer: ''},
                         {number: 6,
-                        content: '',
+                        content: 'It seems like including $scope in a ctrl we run the risk of muddying up the global scope, but maybe thats the mechanism for bridging html and ctrl so it has to be done?',
                         answer: ''},
                         {number: 7,
                         content: '',

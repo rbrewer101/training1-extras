@@ -21,9 +21,15 @@ server.use(restify.jsonBodyParser({ mapParams: false }));
  */
 
 /*
- * Try some neo4j test queries.
+ * REST : CREATE node.
  */
 server.post('api/v1/nodes', api.postNodeV1);
+
+
+/*
+ * REST : GET nodes
+ */
+server.get('api/v1/nodes', api.getNodesV1);
 
 
 /*
