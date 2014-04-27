@@ -6,11 +6,28 @@ lib-cov
 *.out
 *.pid
 *.gz
+<<<<<<< HEAD
+=======
+*.swp
+*.swo
+.DS_Store
+>>>>>>> 7899b120f872e31871b8609a093a99069c1597a3
 
 pids
 logs
 results
+<<<<<<< HEAD
 
 npm-debug.log
 node_modules
 .idea
+=======
+dist
+# test coverage files
+coverage/
+
+node_modules
+npm-debug.log
+
+template/**/*.js
+>>>>>>> 7899b120f872e31871b8609a093a99069c1597a3

@@ -16,6 +16,10 @@
             'user' : {}
         };
 
+
+        console.log("userservice was touched with UserService.user : ", UserService.user, " and UserService.users: ", UserService.users);
+
+
         UserService.saveLocalUsers = function(users) {
 
             this.users = users;

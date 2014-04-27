@@ -56,7 +56,11 @@
         var userId = $routeParams.userId;
         $scope.user = userService.getLocalUser(userId);
 
+        console.log("UsersEditCtrl : userService.getLocalUser(userId) : ", $scope.user);
+        console.log("UsersEditCtrl : userId : ", userId);
+
         $scope.save = function() {
+
 
             userService.saveUser($scope.user, function(err, status) {
 

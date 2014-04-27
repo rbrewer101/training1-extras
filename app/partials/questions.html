@@ -46,9 +46,10 @@
 </head>
 
 
-<body ng-app="QApp" ng-controller="QCtrl">
+<!--body ng-app="QApp" ng-controller="QCtrl"-->
 
-<div>
+<body>
+<!--div>
     <p>Questions</p>
     <table>
         <tr ng-repeat="question in questions">
@@ -57,20 +58,22 @@
         </tr>
         <p></p>
     </table>
-</div>
+</div-->
 
 <p>Graphics Sandbox</p>
 
 <div id="chartArea"></div>
 <script type="text/javascript">
 
-    var dataset = _.map(_.range(50), function(i) {
+    var dataset = _.map(_.range(10), function(i) {
         return {
             x: Math.random() * 100,
             y: Math.random() * 100,
             r: Math.random() * 30
         };
     });
+
+    console.log("dataset : ", dataset);
 
     var w = 400;
     var h = 200;

@@ -1,4 +1,3 @@
-var neo = require('./lib/neo');
 var restify = require('restify');
 var mongo = require('./lib/mongo');
 var api = require('./lib/api');
@@ -31,6 +30,15 @@ server.post('api/v1/nodes', api.postNodeV1);
  */
 server.get('api/v1/nodes', api.getNodesV1);
 
+/*
+ * REST : DELETE nodes
+ */
+server.del('api/v1/nodes', api.deleteNodeV1);
+
+/*
+ * REST : SAVE nodes
+ */
+server.put('api/v1/nodes', api.putNodeV1);
 
 /*
  * REST GET : Get users

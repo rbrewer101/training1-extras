@@ -1,5 +1,5 @@
+
 training1-extras
-=========
 
 - To install this project locally, cd to directory where you want the source code to live, then:
  - install neo4j locally
@@ -12,4 +12,4 @@ training1-extras
 
 - To add a dependency during development:
  - > npm install <node dependency> --save
-   - NOTE: "--save" adds the dependency to package.json 
+   - NOTE: "--save" adds the dependency to package.json
